@@ -6,10 +6,6 @@ import data.model.ProfileResponse;
 import data.model.TrackResponse;
 import io.reactivex.Observable;
 
-/**
- * Created by sumon.chatterjee on 04/04/18.
- */
-
 public class ProfileInteractor {
 
     private SpotifyService spotifyService;

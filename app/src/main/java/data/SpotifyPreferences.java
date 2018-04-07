@@ -3,10 +3,6 @@ package data;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/**
- * Created by sumon.chatterjee on 03/04/18.
- */
-
 public class SpotifyPreferences {
     public static final String ACCESS_TOKEN = "access_token";
     private static final String PREFS_NAME = "Spotify_Shared_Preference";

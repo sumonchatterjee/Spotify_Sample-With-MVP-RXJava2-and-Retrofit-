@@ -9,9 +9,6 @@ import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
-/**
- * Created by sumon.chatterjee on 03/04/18.
- */
 
 public class SpotifyClient extends SpotifyRetrofitClient implements SpotifyService{
     @Override

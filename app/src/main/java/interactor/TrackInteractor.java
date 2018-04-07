@@ -5,10 +5,6 @@ import data.model.AlbumResponse;
 import data.model.TrackResponse;
 import io.reactivex.Observable;
 
-/**
- * Created by sumon.chatterjee on 05/04/18.
- */
-
 public class TrackInteractor {
 
     private SpotifyService spotifyService;

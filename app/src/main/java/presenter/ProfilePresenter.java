@@ -6,9 +6,6 @@ import data.model.ProfileResponse;
 import interactor.ProfileInteractor;
 import io.reactivex.observers.DisposableObserver;
 
-/**
- * Created by sumon.chatterjee on 04/04/18.
- */
 
 public class ProfilePresenter extends BasePresenter<ProfilePresenter.View> {
 

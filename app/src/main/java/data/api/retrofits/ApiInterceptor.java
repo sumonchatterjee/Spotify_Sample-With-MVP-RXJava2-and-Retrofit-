@@ -1,11 +1,10 @@
 package data.api.retrofits;
 
-import android.content.Context;
+
 
 import java.io.IOException;
 
 import application.SpotifyApplication;
-import data.SpotifyPreferences;
 import data.api.Constant;
 import okhttp3.Interceptor;
 import okhttp3.Request;

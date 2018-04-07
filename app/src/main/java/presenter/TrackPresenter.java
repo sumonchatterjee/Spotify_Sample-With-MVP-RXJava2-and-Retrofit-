@@ -7,10 +7,6 @@ import data.model.TrackResponse;
 import interactor.TrackInteractor;
 import io.reactivex.observers.DisposableObserver;
 
-/**
- * Created by sumon.chatterjee on 05/04/18.
- */
-
 public class TrackPresenter extends BasePresenter<TrackPresenter.View> {
 
     private TrackInteractor interactor;

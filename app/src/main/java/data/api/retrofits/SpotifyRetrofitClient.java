@@ -1,6 +1,5 @@
 package data.api.retrofits;
 
-
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import data.api.Constant;
 import okhttp3.OkHttpClient;
