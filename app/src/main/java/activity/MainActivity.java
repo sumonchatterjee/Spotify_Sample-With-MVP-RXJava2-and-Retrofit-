@@ -147,7 +147,7 @@ public class MainActivity extends BaseActivity implements ProfilePresenter.View,
 
           List<AlbumImages> image =profile.getImages();
           if(image!=null && image.size()>0){
-              GlideImageLoader.imageLoadRequest(((ImageView)findViewById(R.id.circleView)),image.get(0).getUrl(), R.drawable.face);
+              GlideImageLoader.imageLoadRequest(((ImageView)findViewById(R.id.circleView)),image.get(0).getUrl(), R.mipmap.icon);
           }
       }
 

@@ -2,5 +2,9 @@
     <string name="app_name">SpotifySample</string>
     <string name="drawer_open">Open Profile</string>
     <string name="drawer_close">Close Profile</string>
+    <string name="country">Country</string>
+    <string name="email">email</string>
+    <string name="birthday">birthday</string>
+    <string name="name">name</string>
 
 </resources>

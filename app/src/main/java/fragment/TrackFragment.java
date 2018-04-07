@@ -170,4 +170,6 @@ public class TrackFragment extends BaseFragment implements TrackPresenter.View,T
                 tracksPresenter.searchTracks(s.toString());
             }
         }};
+
+
 }

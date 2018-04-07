@@ -6,18 +6,19 @@
     >
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/face"
+        android:src="@mipmap/icon"
         android:id="@+id/circleView"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="name"
+        android:hint="@string/name"
         android:textColor="#000000"
         android:id="@+id/profile_name"
         android:layout_below="@+id/circleView"
@@ -29,7 +30,7 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Birthdate"
+        android:hint="@string/birthday"
         android:textColor="#000000"
         android:id="@+id/profile_bday"
         android:layout_below="@+id/profile_name"
@@ -39,7 +40,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="email"
+        android:hint="@string/email"
         android:textColor="#000000"
         android:id="@+id/profile_email"
         android:layout_marginTop="16dp"
@@ -49,7 +50,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="country"
+        android:hint="@string/country"
         android:textColor="#000000"
         android:id="@+id/profile_country"
         android:layout_marginTop="16dp"
