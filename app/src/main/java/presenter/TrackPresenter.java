@@ -18,7 +18,7 @@ public class TrackPresenter extends BasePresenter<TrackPresenter.View> {
     }
 
 
-
+// get tracks for the specified album, when user click on it
     public void getTrackForAlbums(String albumId){
         getView().showLoader();
         DisposableObserver<TrackResponse> disposableObserver = interactor.getAlbumTracks(albumId)
@@ -45,6 +45,7 @@ public class TrackPresenter extends BasePresenter<TrackPresenter.View> {
         addDisposableObserver(disposableObserver);
     }
 
+    //search particular tracks
     public void searchTracks(String albumId){
         getView().showLoader();
         DisposableObserver<TrackResponse> disposableObserver = interactor.searchTracks(albumId)

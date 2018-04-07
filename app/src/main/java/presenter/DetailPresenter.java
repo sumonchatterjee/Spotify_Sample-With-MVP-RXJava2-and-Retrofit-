@@ -19,6 +19,7 @@ public class DetailPresenter extends BasePresenter<DetailPresenter.View> {
     }
 
 
+    //get audio featues for a particular track
     public void getAudioFeaturesForTrack(String trackId){
         getView().showLoader();
         DisposableObserver<AudioFeaturesResponse> disposableObserver = interactor.getAudioFeaturesForTrack(trackId)

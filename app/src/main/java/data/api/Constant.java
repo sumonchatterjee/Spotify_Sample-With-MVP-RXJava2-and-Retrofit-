@@ -4,9 +4,6 @@ import static data.api.Constant.Params.ALBUMS_ID;
 import static data.api.Constant.Params.QUERY_SEARCH;
 import static data.api.Constant.Params.TRACK_ID;
 
-/**
- * Created by sumon.chatterjee on 03/04/18.
- */
 
 public class Constant {
 

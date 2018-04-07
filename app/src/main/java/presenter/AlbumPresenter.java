@@ -13,7 +13,7 @@ public class AlbumPresenter extends BasePresenter<AlbumPresenter.View> {
     this.interactor = interactor;
   }
 
-
+  // get user's saved albums
   public void getSavedAlbums(){
 
     DisposableObserver<AlbumResponse> disposableObserver = interactor.getAlbums().subscribeWith(new DisposableObserver<AlbumResponse>() {
