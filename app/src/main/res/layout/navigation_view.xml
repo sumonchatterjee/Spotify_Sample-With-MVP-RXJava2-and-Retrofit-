@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+
+    >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/face"
+        android:id="@+id/circleView"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="name"
+        android:textColor="#000000"
+        android:id="@+id/profile_name"
+        android:layout_below="@+id/circleView"
+        android:layout_marginTop="16dp"
+        android:textSize="14sp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Birthdate"
+        android:textColor="#000000"
+        android:id="@+id/profile_bday"
+        android:layout_below="@+id/profile_name"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="email"
+        android:textColor="#000000"
+        android:id="@+id/profile_email"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/profile_bday"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="country"
+        android:textColor="#000000"
+        android:id="@+id/profile_country"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/profile_email"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

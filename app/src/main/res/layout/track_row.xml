@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        android:layout_marginBottom="12dp">
+
+
+
+        <ImageView
+            android:id="@+id/imgvw"
+            android:layout_width="100dp"
+            android:layout_height="80dp" />
+
+
+        <TextView
+            android:id="@+id/track_name"
+            android:layout_toRightOf="@+id/imgvw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            />
+
+        <TextView
+            android:id="@+id/track_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="11dp"
+            />
+
+        <TextView
+            android:id="@+id/track_artist"
+            android:layout_marginLeft="11dp"
+            android:layout_toRightOf="@+id/imgvw"
+            android:paddingTop="4dp"
+            android:layout_below="@+id/track_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
