@@ -45,6 +45,7 @@ public class MainActivity extends BaseActivity implements ProfilePresenter.View,
     private DrawerLayout mDrawerLayout;
     private String albumId;
     private Album albumDetail;
+    private  Toolbar topToolBar;
 
     @BindView(R.id.toolbar) Toolbar toolbar;
     @BindView(R.id.dineoutLoader) ProgressBar bar;
@@ -65,7 +66,7 @@ public class MainActivity extends BaseActivity implements ProfilePresenter.View,
 
         navigationView.setNavigationItemSelectedListener(this);
 
-        Toolbar topToolBar = findViewById(R.id.toolbar);
+        topToolBar = findViewById(R.id.toolbar);
         setSupportActionBar(topToolBar);
         getSupportActionBar().setTitle("Spotify");
         toggleDrawer();
@@ -75,7 +76,9 @@ public class MainActivity extends BaseActivity implements ProfilePresenter.View,
     }
 
 
-
+     public Toolbar getToolbar(){
+        return topToolBar;
+     }
     private void toggleDrawer(){
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

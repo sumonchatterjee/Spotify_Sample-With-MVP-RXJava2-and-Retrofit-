@@ -1,6 +1,7 @@
 package fragment;
 
 import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 
 import spotify.com.spotifysample.R;
@@ -41,6 +42,32 @@ public class BaseFragment extends DialogFragment {
                 fragment,
                 enter, exit, popEnter, popExit, isAddToBackStack);
     }
+
+    public static void popBackStack(FragmentManager manager) {
+        if (manager != null) {
+            try {
+
+                manager.popBackStack();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void popToHome(FragmentActivity activity) {
+        FragmentManager fragmentManager = activity.getSupportFragmentManager();
+        if (fragmentManager.getBackStackEntryCount() > 1) {
+            popBackStackTo(fragmentManager,
+                    fragmentManager.getBackStackEntryAt(1));
+        }
+    }
+
+    public static void popBackStackTo(FragmentManager manager,
+                                      FragmentManager.BackStackEntry entry) {
+        FragmentTransactionManager.popBackStackTo(manager, entry,
+                FragmentManager.POP_BACK_STACK_INCLUSIVE);
+    }
+
 
 
     public interface OnFragmentInteractionListener {

@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
+import activity.MainActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import data.api.client.SpotifyClient;
@@ -83,10 +84,8 @@ public class DetailFragment extends BaseFragment implements DetailPresenter.View
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Toolbar toolbar=getView().findViewById(R.id.toolbar);
 
-
-
+        handleNavigation();
     }
 
     @Override
@@ -118,6 +117,15 @@ public class DetailFragment extends BaseFragment implements DetailPresenter.View
         return null;
     }
 
-
+    //handle back navigation
+    private void handleNavigation(){
+        android.support.v7.widget.Toolbar bar=((MainActivity)this.getActivity()).getToolbar();
+        bar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popBackStack(getFragmentManager());
+            }
+        });
+    }
 
 }
