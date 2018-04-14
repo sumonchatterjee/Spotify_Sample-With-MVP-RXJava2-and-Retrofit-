@@ -1,6 +1,9 @@
 package activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,6 +18,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -56,6 +60,15 @@ public class MainActivity extends BaseActivity implements ProfilePresenter.View,
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawers_layout);
+
+        if (!isTaskRoot()
+                && getIntent().hasCategory(Intent.CATEGORY_LAUNCHER)
+                && getIntent().getAction() != null
+                && getIntent().getAction().equals(Intent.ACTION_MAIN)) {
+
+            finish();
+            return;
+        }
         ButterKnife.bind(this);
 
         profilePresenter = new ProfilePresenter(new ProfileInteractor(new SpotifyClient()),this);
@@ -160,24 +173,26 @@ public class MainActivity extends BaseActivity implements ProfilePresenter.View,
 
     @Override
     public void displayAlbums(AlbumResponse album) {
-      if(album!=null){
+      if(album!=null) {
           albumDetail = album.getItems().get(0).getAlbum();
           albumId = album.getItems().get(0).getAlbum().getId();
           NavigationView navView = findViewById(R.id.nv);
 
           Menu menu = navView.getMenu();
           Menu submenu = menu.addSubMenu("Saved Albums");
-
-         if(album!=null && album.getItems().size()>0){
-             for (int i=0;i<album.getItems().size();i++)
-                 submenu.add(album.getItems().get(i).getAlbum().getName());
-          }
-
+              if (album.getItems().size() > 0) {
+                  for (int i = 0; i < album.getItems().size(); i++)
+                      submenu.add(album.getItems().get(i).getAlbum().getName());
+              }
           navView.invalidate();
       }
     }
 
 
+    @Override
+    public void displayError(String errorMsg) {
+        makeAlertDialog(errorMsg);
+    }
 
     @Override
     public void showLoader() {bar.setVisibility(View.VISIBLE);
@@ -210,8 +225,8 @@ public class MainActivity extends BaseActivity implements ProfilePresenter.View,
         bundle.putString("ALBUM_IMAGE",albumDetail.getImages().get(0).getUrl());
         TrackFragment trackFragment = new TrackFragment();
         trackFragment.setArguments(bundle);
-        BaseFragment
-                .addToBackStack(getFragmentsManager(), trackFragment, false);
+        BaseFragment.addToBackStack(getFragmentsManager(), trackFragment, false);
+
     }
 
     @Override
@@ -230,11 +245,32 @@ public class MainActivity extends BaseActivity implements ProfilePresenter.View,
 
     @Override
     public void onBackPressed() {
-        if(getFragmentManager().getBackStackEntryCount() > 0) {
+        if( getSupportFragmentManager().getBackStackEntryCount()==1){
+            finish();
+        }
+        else if( getSupportFragmentManager().getBackStackEntryCount() > 0) {
             getFragmentsManager().popBackStack();
-        } else {
+        } else{
             super.onBackPressed();
 
         }
+    }
+
+
+
+    private void makeAlertDialog(String errorMsg) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Authorization Error");
+        builder.setMessage(errorMsg);
+        builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(),"Please Unistall the app and do a fresh install",Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setIcon(android.R.drawable.ic_dialog_alert);
+        builder.setCancelable(false);
+
+        builder.create().show();
     }
 }

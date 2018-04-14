@@ -30,7 +30,7 @@ public class DetailFragment extends BaseFragment implements DetailPresenter.View
     @BindView(R.id.speechiness) TextView speechinessTv;
     @BindView(R.id.acousticness) TextView acousticnessTv;
     @BindView(R.id.instrumentalness) TextView instrumentalnessTv;
-    @BindView(R.id.loaders) ProgressBar loaderView;
+    @BindView(R.id.loaders) ProgressBar loaders;
 
 
 
@@ -43,7 +43,7 @@ public class DetailFragment extends BaseFragment implements DetailPresenter.View
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.mListener =  (OnFragmentInteractionListener) context;
+        this.mListener = (OnFragmentInteractionListener) context;
     }
 
 
@@ -74,12 +74,16 @@ public class DetailFragment extends BaseFragment implements DetailPresenter.View
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.detail_fragment, container, false);
-        ButterKnife.bind(this, view);
-        return view;
+        return inflater.inflate(R.layout.detail_fragment, container, false);
+
 
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ButterKnife.bind(this, view);
+    }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -90,12 +94,12 @@ public class DetailFragment extends BaseFragment implements DetailPresenter.View
 
     @Override
     public void showLoader() {
-        //loaderView.setVisibility(View.VISIBLE);
+        //loaders.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideLoader() {
-        //loaderView.setVisibility(View.GONE);
+        //loaders.setVisibility(View.GONE);
     }
 
     @Override

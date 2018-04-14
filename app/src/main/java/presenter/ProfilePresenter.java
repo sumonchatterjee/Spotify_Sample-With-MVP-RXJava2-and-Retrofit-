@@ -33,8 +33,8 @@ public class ProfilePresenter extends BasePresenter<ProfilePresenter.View> {
             @Override
             public void onError(Throwable e) {
                 getView().hideLoader();
-                System.out.println(e.getLocalizedMessage());
-                Toast.makeText(mContext,e.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+                getView().displayError(e.getLocalizedMessage());
+               // Toast.makeText(mContext,e.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -61,6 +61,8 @@ public class ProfilePresenter extends BasePresenter<ProfilePresenter.View> {
         void hideLoader();
 
         void displayProfile(ProfileResponse profile);
+
+        void displayError(String errorMsg);
 
 
     }
